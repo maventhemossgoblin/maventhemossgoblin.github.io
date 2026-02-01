@@ -272,10 +272,13 @@ main > h3 {
     text-align: center;
     color: var(--altb);
 }
-main > h3 + p {
+main > h3 + p,  main > h2 + p{
     margin: 10px auto 25px;
     max-width: 700px;
     text-align: center;
+}
+main > h2 + p {
+    text-align: left;
 }
 main .p-gallery {
     display: grid;
