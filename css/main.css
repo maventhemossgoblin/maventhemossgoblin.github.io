@@ -356,6 +356,68 @@ main .p-gallery > div {
     background-position: center center;
 }
 
+/* Fleet Process Page */
+#fleet header {
+    background: 
+        linear-gradient(0deg, #fffb, #fff),
+        url("../media/gd/kInt3.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Starlight Process Page */
+#starlight header {
+    background: 
+        linear-gradient(0deg, #fffb, #fff),
+        url("../media/gd/kp3b.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Celeste Process Page */
+#celeste header {
+    background: 
+        linear-gradient(0deg, #fffb, #fff),
+        url("../media/gd/kp2b.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Musician Process Page */
+#musician header {
+    background: 
+        linear-gradient(0deg, #fffb, #fff),
+        url("../media/id/semester-project-final-pinup.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Loci Process Page */
+#loci header {
+    background: 
+        linear-gradient(0deg, #fffb, #fff),
+        url("../media/gd/kp2b.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Hypo Process Page */
+#hypo header {
+    background: 
+        linear-gradient(0deg, #fffb, #fff),
+        url("../media/gd/kp2b.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+/* AirBnb Process Page */
+#abnb header {
+    background: 
+        linear-gradient(0deg, #fffb, #fff),
+        url("../media/gd/kp2b.jpg");
+    background-size: cover;
+    background-position: center center;
+}
 
 /* LARGE DESKTOP RESPONSIVENESS MEDIA QUERY */
 @media screen and (min-height: 1024px) {
