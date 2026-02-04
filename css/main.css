@@ -54,6 +54,9 @@ img {
         background-color: transparent;
     }
 }
+.underline {
+    text-decoration: underline;
+}
 .contain {
     width: 90dvw;
     max-width: 1440px;
@@ -340,11 +343,39 @@ main .p-gallery > div {
 }
 .processCopy {
     margin: 25px 0px;
+    max-width: 800px;
+    em {
+        display: block;
+        margin: 10px 0px;
+    }
+}
+.processPage .additionalDetails {
+    margin: 10px 0px;
+    font-style: italic;
+}
+.processPage ol, .processPage ul {
+    list-style-position: inside;
+}
+.processSBS .processCopy {
+    margin-top: 10px;
 }
 .imageProcess {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
+}
+.processGrid {
+    margin-top: 25px;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    columns: 2 auto;
+    gap: 40px;
+    > .processCopy:first-of-type {
+        margin-top: 0px;
+    }
+    + .processCopy {
+        margin: 0px 0px 40px;
+    }
 }
 
 /* Life Cast Process Page */
@@ -449,7 +480,10 @@ main .p-gallery > div {
 }
 
 /* MOBILE/TABLET HYBRID RESPONSIVENESS MEDIA QUERY */
-@media screen and (max-width: 805px) {
+@media screen and (max-width: 910px) {
+    header {
+        grid-template-rows: auto;
+    }
     nav.contain {
         position: fixed;
         width: 100dvw;
@@ -530,5 +564,8 @@ main .p-gallery > div {
     }
     main .p-gallery {
         grid-template-columns: 1fr;
+    }
+    .processGrid {
+        columns: 1 auto;
     }
 }
