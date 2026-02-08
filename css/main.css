@@ -53,6 +53,10 @@ img {
         color: var(--acc);
         background-color: transparent;
     }
+    &.disabled {
+        opacity: 0.5;
+        filter: grayscale(100%);
+    }
 }
 .underline {
     text-decoration: underline;
@@ -266,10 +270,11 @@ footer {
     margin-top: 40px;
 }
 
-/* Homepage Galleries */
+/* Homepage & Gallery Page */
 main > h2 {
     margin-bottom: 25px;
     font-size: clamp(1.5rem, 3vw, 4rem);
+    text-align: center;
 }
 main > h3 {
     text-align: center;
@@ -321,6 +326,24 @@ main .p-gallery {
 }
 main .p-gallery > div {
     break-inside: avoid;
+}
+
+/* Gallery Page */
+#gallery header {
+    min-height: 35dvh;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+#gallery .hero {
+    align-self: center;
+    justify-content: center;
+}
+#gallery .hero .contain {
+    display: block;
+    h1 {
+        text-align: center;
+        font-size: clamp(2rem, 6vw, 6rem);
+    }
 }
 
 /* Process Pages */
