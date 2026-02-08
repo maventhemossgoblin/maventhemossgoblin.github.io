@@ -1,0 +1,155 @@
+// 6. Projects Section
+#projects {
+    position: relative;
+    .line {
+        border-bottom: 10px solid $acc;
+        position: relative;
+        z-index: 3;
+    }
+}
+#projects #p-menu {
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    background-color: $sec;
+    ul {
+        @include contain($contain);
+        display: flex;
+        gap: 10px;
+        @include mob {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0px;
+            .active {
+                flex: 100%;
+                order: 3;
+                opacity: 1;
+                font-size: 1rem;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                .diamond {
+                    display: block;
+                }
+            }
+        }
+        .active {
+            background-color: #ff0055;
+            color: $wht;
+            .diamond {
+                transform: translateY(50%) rotate(45deg);
+                background-color: $main
+            }
+        }
+    }
+    li {
+        @include font($head, 1.25rem);
+        position: relative;
+        z-index: 2;
+        padding: 25px 12.5px;
+        cursor: pointer;
+        transition: all 0.5s;
+        .diamond {
+            background: $sec;
+            height: 25px;
+            margin-left: 5px;
+            transition: all 0.5s;
+            position: absolute;
+            transform: translateY(-50%) rotate(45deg);
+            z-index: -1;
+        }
+        &:hover {
+            background-color: $main;
+            color: $wht;
+            .diamond {
+                background-color: $main;
+                transform: translateY(50%) rotate(45deg);
+            }
+        }
+        @include mob {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-wrap: nowrap;
+            flex: 1;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            .diamond {
+                bottom: 0px;
+                margin: 0px;
+                display: none;
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+#projects .accord {
+    display: none;
+}
+#projects .accord.active {
+    display: block;
+}
+
+#projects .card{
+    position: relative;
+    z-index: 1;
+    background-image: url(../imgs/sm/milleru_savantminimalist-mockup.jpg);
+    background-size: cover;
+    .container {
+        @include contain($contain);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: ". cont";
+        @include mob {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "cont" ".";
+        }
+    }
+    .content {
+        grid-area: cont;
+        padding: 100px 0px 100px 25px;
+        p {
+            margin: 10px 0px 20px;
+        }
+        @include mob {
+            padding: 50px 0px 0px;
+        }
+    }
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        .btn {
+            flex: 1;
+        }
+    }
+    .cblock {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        z-index: -1;
+        background-color: #00C9FF22;
+        backdrop-filter: blur(10px);
+        @include mob {
+            height: 60%;
+            width: 100%;
+        }
+    }
+    &:last-child .cblock::after {
+        background: linear-gradient(to bottom, #00C9FF55 20%, $acc 100%);
+        mix-blend-mode: normal;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+}

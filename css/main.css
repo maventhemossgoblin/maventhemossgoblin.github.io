@@ -288,6 +288,7 @@ main > h3 + p,  main > h2 + p{
 main > h2 + p {
     text-align: left;
 }
+
 main .p-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
