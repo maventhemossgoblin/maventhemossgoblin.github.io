@@ -271,6 +271,9 @@ footer {
 }
 
 /* Homepage & Gallery Page */
+#homepage header, #homepage footer {
+    margin: 0px;
+}
 main > h2 {
     margin-bottom: 25px;
     font-size: clamp(1.5rem, 3vw, 4rem);

@@ -1,3 +1,76 @@
+// 1. Variables
+// color variables
+$blk: #010101;
+$wht: #fefefe;
+$main: #1e561e;
+$sec: #7a310a;
+$acc: #610345;
+$alta: #b57901;
+$altb: #000767;
+$blur: rgba(49, 49, 49, 0.9);
+// font variables
+$light: "Roboto", sans-serif;
+$reg: "Roboto", sans-serif;
+$med: "Roboto", sans-serif;
+$bold: "Roboto", sans-serif;
+$head: "Roboto", sans-serif;
+// spacing and layout variables
+$gridcol: auto;
+$gridrow: auto;
+$spc: 0px auto;
+$lspc: 0px auto 0px auto;
+$size: 1.125rem;
+$flow: row wrap;
+$contain: 90%;
+// 3. Mixins
+@mixin font($light, $size) {
+    font-family: $light;
+    font-size: $size;
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin marg($spc) {
+    margin: $spc;
+}
+@mixin padd($spc) {
+    padding: $spc;
+}
+@mixin margl($lspc) {
+    margin: $lspc;
+}
+@mixin paddl($lspc) {
+    padding: $lspc;
+}
+@mixin flex($flow) {
+    display: flex;
+    flex-flow: $flow;
+}
+@mixin grid($gridcol, $gridrow) {
+    display: grid;
+    grid-template-columns: $gridcol;
+    grid-template-rows: $gridrow;
+}
+@mixin contain($contain) {
+    width: $contain;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@mixin imgsize($size) {
+    width: $size;
+    height: $size;
+}
+//media query mixins
+@mixin lapl {
+  @media (min-width: 1600px) { @content; }
+}
+@mixin tab {
+  @media (max-width: 1280px) and (min-width: 876px) { @content; }
+}
+@mixin mob {
+  @media (max-width: 875px) { @content; }
+}
+
 // 6. Projects Section
 #projects {
     position: relative;
@@ -6,35 +79,36 @@
         position: relative;
         z-index: 3;
     }
+    ul, ol {
+        list-style-type: none;
+    }
 }
 #projects #p-menu {
     position: sticky;
     top: 0px;
     z-index: 2;
-    background-color: $sec;
+    background-color: $main;
+    color: $wht;
     ul {
         @include contain($contain);
         display: flex;
-        gap: 10px;
+        gap: 0px;
         @include mob {
             width: 100%;
             flex-wrap: wrap;
             justify-content: center;
             gap: 0px;
-            .active {
+            .proj-active {
                 flex: 100%;
                 order: 3;
                 opacity: 1;
                 font-size: 1rem;
                 padding-top: 15px;
                 padding-bottom: 15px;
-                .diamond {
-                    display: block;
-                }
             }
         }
-        .active {
-            background-color: #ff0055;
+        .proj-active {
+            background-color: $acc;
             color: $wht;
             .diamond {
                 transform: translateY(50%) rotate(45deg);
@@ -49,22 +123,9 @@
         padding: 25px 12.5px;
         cursor: pointer;
         transition: all 0.5s;
-        .diamond {
-            background: $sec;
-            height: 25px;
-            margin-left: 5px;
-            transition: all 0.5s;
-            position: absolute;
-            transform: translateY(-50%) rotate(45deg);
-            z-index: -1;
-        }
         &:hover {
-            background-color: $main;
+            background-color: $acc;
             color: $wht;
-            .diamond {
-                background-color: $main;
-                transform: translateY(50%) rotate(45deg);
-            }
         }
         @include mob {
             font-size: 0.8rem;
@@ -91,14 +152,14 @@
 #projects .accord {
     display: none;
 }
-#projects .accord.active {
+#projects .accord.proj-active {
     display: block;
 }
 
 #projects .card{
     position: relative;
     z-index: 1;
-    background-image: url(../imgs/sm/milleru_savantminimalist-mockup.jpg);
+    background-image: url("../media/id/final-251-3d-paper-model-photograph.jpg");
     background-size: cover;
     .container {
         @include contain($contain);
@@ -136,15 +197,15 @@
         height: 100%;
         width: 50%;
         z-index: -1;
-        background-color: #00C9FF22;
-        backdrop-filter: blur(10px);
+        background-color: #fefefe55;
+        backdrop-filter: blur(20px);
         @include mob {
             height: 60%;
             width: 100%;
         }
     }
     &:last-child .cblock::after {
-        background: linear-gradient(to bottom, #00C9FF55 20%, $acc 100%);
+        background: linear-gradient(to bottom, #b5790155 20%, $acc 100%);
         mix-blend-mode: normal;
         height: 100%;
         width: 100%;
