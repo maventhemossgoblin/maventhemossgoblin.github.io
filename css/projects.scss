@@ -62,7 +62,7 @@ $contain: 90%;
 }
 //media query mixins
 @mixin lapl {
-  @media (min-width: 1600px) { @content; }
+  @media (min-width: 1500px) { @content; }
 }
 @mixin tab {
   @media (max-width: 1280px) and (min-width: 876px) { @content; }
@@ -154,6 +154,10 @@ $contain: 90%;
 }
 #projects .accord.proj-active {
     display: block;
+    @include lapl {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 #projects .card{
@@ -161,25 +165,37 @@ $contain: 90%;
     z-index: 1;
     background-image: url("../media/id/final-251-3d-paper-model-photograph.jpg");
     background-size: cover;
+    background-position: center center;
+    height: 550px;
+    min-height: 50dvh;
+    @include mob {
+        height: auto;
+    }
     .container {
         @include contain($contain);
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: ". cont";
+        grid-template-areas: "image cont";
+        grid-auto-rows: 100%;
+        height: 100%;
         @include mob {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
-            grid-template-areas: "cont" ".";
+            grid-template-areas: "cont" "image";
         }
     }
     .content {
         grid-area: cont;
-        padding: 100px 0px 100px 25px;
+        padding: 0px 25px;
+        backdrop-filter: blur(20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         p {
             margin: 10px 0px 20px;
         }
         @include mob {
-            padding: 50px 0px 0px;
+            padding: 25px;
         }
     }
     .buttons {
@@ -195,14 +211,10 @@ $contain: 90%;
         top: 0;
         right: 0;
         height: 100%;
-        width: 50%;
+        width: 100%;
         z-index: -1;
         background-color: #fefefe55;
-        backdrop-filter: blur(20px);
-        @include mob {
-            height: 60%;
-            width: 100%;
-        }
+        backdrop-filter: blur(5px);
     }
     &:last-child .cblock::after {
         background: linear-gradient(to bottom, #b5790155 20%, $acc 100%);
@@ -213,4 +225,58 @@ $contain: 90%;
         top: 0px;
         left: 0px;
     }
+    .ic {
+        grid-area: image;
+        width: 100%;
+        height: 100%;
+    }
+    .ic img {
+        height: 100%;
+        display: block;
+    }
+}
+// #projects .card:nth-child(2n) .container {
+//     @include lapl {
+//         grid-template-areas: "cont image";
+//     }
+// }
+#projects #loci-card.card{
+    background-image: url("../media/id/loci0.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#projects #hypo-card.card{
+    background-image: url("../media/id/loci0.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#projects #abnb-card.card{
+    background-image: url("../media/id/apartmentMoodboard2.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#projects #fleet-card.card{
+    background-image: url("../media/gd/kInt4.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#projects #celeste-card.card{
+    background-image: url("../media/gd/kp3c.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#projects #lifecast-card.card{
+    background-image: url("../media/gd/kp2a.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#projects #starlight-card.card{
+    background-image: url("../media/gd/kp3a.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#projects #butterfly-card.card{
+    background-image: url("../media/fa/finished-butterfly1.jpg");
+    background-size: cover;
+    background-position: center center;
 }

@@ -110,12 +110,28 @@
 #projects .accord.proj-active {
   display: block;
 }
+@media (min-width: 1500px) {
+  #projects .accord.proj-active {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 #projects .card {
   position: relative;
   z-index: 1;
   background-image: url("../media/id/final-251-3d-paper-model-photograph.jpg");
   background-size: cover;
+  background-position: center center;
+  height: 550px;
+  min-height: 50dvh;
+}
+@media (max-width: 875px) {
+  #projects .card {
+    height: auto;
+  }
 }
 #projects .card .container {
   width: 90%;
@@ -126,7 +142,9 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-      grid-template-areas: ". cont";
+      grid-template-areas: "image cont";
+  grid-auto-rows: 100%;
+  height: 100%;
 }
 @media (max-width: 875px) {
   #projects .card .container {
@@ -134,27 +152,32 @@
     grid-template-columns: 1fr;
     -ms-grid-rows: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-        grid-template-areas: "cont" ".";
+        grid-template-areas: "cont" "image";
   }
 }
 #projects .card .content {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: cont;
-  padding: 100px 0px 100px 25px;
-}
-@media (max-width: 875px) {
-  #projects .card .content {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
+  padding: 0px 25px;
+  backdrop-filter: blur(20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 #projects .card .content p {
   margin: 10px 0px 20px;
 }
 @media (max-width: 875px) {
   #projects .card .content {
-    padding: 50px 0px 0px;
+    padding: 25px;
   }
 }
 #projects .card .buttons {
@@ -175,16 +198,10 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: 50%;
+  width: 100%;
   z-index: -1;
   background-color: rgba(254, 254, 254, 0.3333333333);
-  backdrop-filter: blur(20px);
-}
-@media (max-width: 875px) {
-  #projects .card .cblock {
-    height: 60%;
-    width: 100%;
-  }
+  backdrop-filter: blur(5px);
 }
 #projects .card:last-child .cblock::after {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(181, 121, 1, 0.3333333333)), to(#610345));
@@ -195,4 +212,73 @@
   position: absolute;
   top: 0px;
   left: 0px;
+}
+#projects .card .ic {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 875px) {
+  #projects .card .content {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  #projects .card .ic {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+}
+#projects .card .ic img {
+  height: 100%;
+  display: block;
+}
+
+#projects #loci-card.card {
+  background-image: url("../media/id/loci0.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#projects #hypo-card.card {
+  background-image: url("../media/id/loci0.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#projects #abnb-card.card {
+  background-image: url("../media/id/apartmentMoodboard2.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#projects #fleet-card.card {
+  background-image: url("../media/gd/kInt4.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#projects #celeste-card.card {
+  background-image: url("../media/gd/kp3c.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#projects #lifecast-card.card {
+  background-image: url("../media/gd/kp2a.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#projects #starlight-card.card {
+  background-image: url("../media/gd/kp3a.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#projects #butterfly-card.card {
+  background-image: url("../media/fa/finished-butterfly1.jpg");
+  background-size: cover;
+  background-position: center center;
 }

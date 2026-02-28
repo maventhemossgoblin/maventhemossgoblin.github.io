@@ -577,7 +577,6 @@ main .p-gallery > div {
         position: fixed;
         top: 0px;
         left: 0px;
-        height: max-content;
         width: 100dvw;
         padding-top: 25px;
         padding-bottom: 25px;
