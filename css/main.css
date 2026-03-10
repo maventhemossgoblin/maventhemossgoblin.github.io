@@ -368,6 +368,16 @@ main .p-gallery > div {
 .processPage .tags {
     font-size: clamp(1.25rem, 2vw, 3rem);
 }
+.processPage .psbs {
+    display: grid;
+    grid-template-columns: minmax(325px, 600px) minmax(325px, 2fr);
+    gap: 50px;
+    position: relative;
+}
+.processPage .psbs .sticked {
+    position: sticky;
+    top: 0px;
+}
 .processCopy {
     margin: 25px 0px;
     max-width: 800px;
