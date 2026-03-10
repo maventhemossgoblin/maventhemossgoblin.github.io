@@ -150,9 +150,11 @@
   #projects .card .container {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-        grid-template-areas: "cont" "image";
+    -ms-grid-rows: 40vh minmax(50vh, -webkit-max-content);
+    -ms-grid-rows: 40vh minmax(50vh, max-content);
+    grid-template-rows: 40vh minmax(50vh, -webkit-max-content);
+    grid-template-rows: 40vh minmax(50vh, max-content);
+        grid-template-areas: "image" "cont";
   }
 }
 #projects .card .content {
@@ -222,11 +224,11 @@
 }
 @media (max-width: 875px) {
   #projects .card .content {
-    -ms-grid-row: 1;
+    -ms-grid-row: 2;
     -ms-grid-column: 1;
   }
   #projects .card .ic {
-    -ms-grid-row: 2;
+    -ms-grid-row: 1;
     -ms-grid-column: 1;
   }
 }

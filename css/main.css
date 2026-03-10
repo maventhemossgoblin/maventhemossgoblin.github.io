@@ -370,8 +370,8 @@ main .p-gallery > div {
 }
 .processPage .psbs {
     display: grid;
-    grid-template-columns: minmax(325px, 600px) minmax(325px, 2fr);
-    gap: 50px;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
     position: relative;
 }
 .processPage .psbs .sticked {
@@ -603,5 +603,12 @@ main .p-gallery > div {
     }
     .processGrid {
         columns: 1 auto;
+    }
+    .processPage .psbs {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .processPage .psbs .sticked {
+        position: static;
     }
 }

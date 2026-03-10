@@ -180,8 +180,8 @@ $contain: 90%;
         height: 100%;
         @include mob {
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
-            grid-template-areas: "cont" "image";
+            grid-template-rows: 40vh minmax(50vh, max-content);
+            grid-template-areas: "image" "cont";
         }
     }
     .content {
